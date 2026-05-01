@@ -4593,6 +4593,14 @@ is a proper list, in which case the list will be returned as is,
 otherwise the function will return the object wrapped in a
 singleton list.
 
+---
+** In batch mode, 'C-c' (i.e. SIGINT) can either 'quit' or kill Emacs.
+By default it kills Emacs, as before, but 'kill-emacs-on-sigint'
+can be set to nil to change that.
+The response to SIGINT in interactive sessions is unaffected,
+e.g. in a normal GUI session it still kills Emacs whereas in a terminal
+it causes 'quit' since it is used for 'C-g'.
+
 
 * Changes in Emacs 31.1 on Non-Free Operating Systems
 
