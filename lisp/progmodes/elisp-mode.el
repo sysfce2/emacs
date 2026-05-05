@@ -575,7 +575,12 @@ This option has effect only if `elisp-fontify-semantically' is non-nil."
      ;; HLP is either a string, or a function that takes SYM as an
      ;; additional argument on top of the usual WINDOW, OBJECT and POS
      ;; that `help-echo' functions takes.
-     (if (stringp hlp) hlp (apply-partially hlp sym)))))
+     (if (stringp hlp) hlp
+       (let ((cache 'unset))
+         (lambda (win obj pos)
+           (if (eq cache 'unset)
+               (setq cache (funcall hlp sym win obj pos))
+             cache)))))))
 
 (defvar font-lock-beg)
 (defvar font-lock-end)
