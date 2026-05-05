@@ -91,6 +91,8 @@ The function is called with one argument, the file name."
 (defconst markdown-ts--convert-output-buffer
   "*markdown-ts-convert output*")
 
+(treesit-declare-unavailable-functions)
+
 (defvar markdown-ts-converters
   (list
    (cons 'html
