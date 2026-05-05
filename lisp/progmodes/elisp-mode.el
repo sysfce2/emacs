@@ -287,6 +287,10 @@ If this is non-nil, `emacs-lisp-mode' uses code analysis to determine
 the role of each symbol and highlight it accordingly.  We call this kind
 of highlighting \"semantic highlighting\".
 
+If `elisp-add-help-echo' is non-nil, also annotate the symbol with the
+`help-echo' text property.  If `cursor-sensor-mode' is enabled,
+also optionally annotate the symbol with `cursor-sensor-functions'.
+
 Semantic highlighting works best when you keep your code syntactically
 correct while editing it, for example by using `electric-pair-mode'.
 
