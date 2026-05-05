@@ -611,7 +611,11 @@ semantic highlighting takes precedence."
 
 If `elisp-add-help-echo' is non-nil, also annotate the symbol with the
 `help-echo' text property.  If `cursor-sensor-mode' is enabled and ID is
-non-nil, also annotate the symbol with `cursor-sensor-functions'."
+non-nil, also annotate the symbol with `cursor-sensor-functions'.
+
+For the precise meaning of the arguments of this function, see the
+docstring of `elisp-scope-analyze-form'.  This function is intended for
+use with `elisp-scope-analyze-form' as its CALLBACK argument."
   (let ((end (progn (goto-char beg) (read (current-buffer)) (point))))
     (let ((face (elisp-scope-get-symbol-role-property role :face)))
       (add-face-text-property
